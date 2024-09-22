@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Bounce Animations</title>
+    <style>
+        .box{
+            height: 121px;
+            width: 121px;
+            background-color: red;
+            border-radius: 70px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: yaxis 30s ease-in-out 1s 3 forwards;
+        }
+
+        .container{
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            background-color: blue;
+        }
+
+        @keyframes yaxis {
+            10%{transform: translate(15vw,-100vh) scale(100%)}
+            20%{transform: translate(30vw,0vh ) scale(90%)}
+            30%{transform: translate(45vw,-80vh ) scale(80%)}
+            40%{transform: translate(60vw, 0vh) scale(70%)}
+            50%{transform: translate(75vw, -60vh) scale(60%)}
+            60%{transform: translate(90vw, 0vh) scale(50%)}
+            70%{transform: translate(105vw, -40vh) scale(40%)}
+            80%{transform: translate(120vw, 0vh) scale(30%)}
+            90%{transform: translate(135vw, -20vh) scale(20%)}
+            100%{transform: translate(150vw, 0vh) scale(10%)}
+          
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+</html>

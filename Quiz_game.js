@@ -8,7 +8,7 @@ let quiz_arr = ["",
     "Who is PM of India?", "Narendra Modi",
     "How many States are in India?", "28",
     "Which country shares longest border with India ?", "Bangladesh"
-]
+];
 
 //Arrays for input answer
 var bool_arr = [];
@@ -33,14 +33,14 @@ for (j = 0; j < user_ans_arr.length; j++) {
         "Question:", quiz_arr[2 * j + 1],
         "Your input:", user_ans_arr[j],
         "Answer:", quiz_arr[2 * j + 2],
-        )
-}
+        );
+};
 
 //Score card generator
 var score = 0;
 for(k = 0; k < bool_arr.length; k++){
     if (bool_arr[k] == true){
         score += 1;
-    }
-}
+    };
+};
 console.log("Your Score is :", score, "/", bool_arr.length);

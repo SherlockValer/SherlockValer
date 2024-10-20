@@ -1,0 +1,23 @@
+//Deep Clone an Object
+//Write a function that creates a deep clone of an object using the for...in loop. This means nested objects should also be cloned.
+
+const obj1 = {
+    a : 1,
+    b : {b1:2.1, b2:2.2, b3:2.3, b4:2.4, b5:2.5, b6:2.6, b7:2.7, b8:2.8, b9:2.9},
+    c : {c1:3.2, c2:3.4, c3:3.6, c4:3.8},
+    d : {d1:4.3, d2:4.6, d3:4.9},
+    e : {e1:4.4, e2:4.8},
+    f : 5
+};
+
+
+function DeepClone(object){
+    clone = {};
+    for(key in object){
+        clone[`${key}`] = object[key];
+    }
+    console.log(clone);
+}
+
+
+DeepClone(obj1);

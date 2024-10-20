@@ -1,0 +1,21 @@
+//Multiply Each Element by 2
+//Given an array of numbers, use forEach to create a new array where each element is multiplied by 2.
+
+//Main Function
+function double_nums(array){
+    const double_num_arr = [];
+    array.forEach((value) => {
+        if(!isNaN(value)){
+        double_num_arr.push(value *2);
+        } else {
+        double_num_arr.push(value);
+        }
+    })
+    console.log(double_num_arr);
+}
+
+//Input array
+const nums = [1,2,3,4,5,6,7,8,9,'as',10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
+
+
+double_nums(nums)

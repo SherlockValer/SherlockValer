@@ -1,0 +1,52 @@
+//Filter Out Specific Properties
+//Create an object with properties of different data types (string, number, boolean). Use for...in to log only the string properties.
+//Functions
+function onlystrings(object){
+    console.log("Strings are :");
+    for ( key in object){
+        if (typeof(object[key]) == "string"){
+            console.log(`${key} : ${object[key]}`);
+        }
+    }
+    console.log(".................................");
+}
+
+function onlyNum(object){
+    console.log("Numbers are :");
+    for ( key in object){
+        if (typeof(object[key]) == "number"){
+            console.log(`${key} : ${object[key]}`);
+        }
+    }
+    console.log(".................................");
+}
+
+function onlyBool(object){
+    console.log("Booleans are :");
+    for ( key in object){
+        if (typeof(object[key]) == "boolean"){
+            console.log(`${key} : ${object[key]}`);
+        }
+    }
+    console.log(".................................");
+}
+
+//Object
+const number = {
+    one : "red",
+    two : "green",
+    three : "blue",
+    four : "yellow",
+    five : "violet",
+    six : 1,
+    seven : 8,
+    eight : true,
+    nine : NaN,
+    ten : null,
+    eleven : undefined
+}
+
+//Calling functions
+onlystrings(number)
+onlyNum(number)
+onlyBool(number)

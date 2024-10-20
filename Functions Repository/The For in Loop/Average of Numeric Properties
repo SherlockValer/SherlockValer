@@ -1,0 +1,24 @@
+//Calculate Average of Numeric Properties
+//Write a function that takes an object with numeric properties and calculates the average of these properties using a for...in loop.
+
+function average_score(object){
+    let sum = 0;
+    let counter = 0;
+    for(key in object){
+        sum += object[key];
+        counter += 1;
+    }
+    let avg = Math.floor((sum / counter)*100)/100;
+    console.log(`The average score is ${avg}`);
+}
+
+const scores = {
+    math : 80,
+    physics : 75,
+    chemistry : 60,
+    english : 92,
+    social_science : 85,
+    sanskrit : 99
+};
+
+average_score(scores);

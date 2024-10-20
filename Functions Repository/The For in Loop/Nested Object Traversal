@@ -1,0 +1,41 @@
+//Nested Object Traversal
+
+//Create an object representing a school with nested objects for different classes and their students. Use a for...in loop to print each class and its students.
+
+//Main Function
+function student_print(object){
+    for(key in object){
+        console.log(`The Students in ${key} are :`);
+        for(key1 in object[key]){
+            console.log(object[key][key1]);
+        }
+    }
+};
+
+//Input object
+const School = {
+    Class_A : {
+        student1: "Radha",
+        student2: "Shyam",
+        student3: "Arjun",
+        student4: "Karna",
+        student5: "Yudhisthir",
+        student6: "Bhim",
+        student7: "Nakul",
+        student8: "Sahadeva",
+        student9: "Draupadi"
+    },
+
+    Class_B : {
+        student1: "Duryodhan",
+        student2: "Dushasan",
+        Student3: "& 98 others....",
+        student4: "Drona",
+        student5: "Ashwathama",
+        student6: "Bhism",
+        student7: "Shantanu",
+    }
+};
+
+//Calling function
+student_print(School);

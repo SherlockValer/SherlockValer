@@ -1,0 +1,32 @@
+//Create a Summary of an Object
+//Write a function that takes an object representing a book (with properties like title, author, year, and pages) and returns a string summarizing the book's details using a for...in loop.
+
+const book = {
+    title : "The Great Gatsby",
+    author : "F. Scott Fitzegerald",
+    year : 1925,
+    pages : 218
+}
+
+function summarize(object){
+    let txt = "";
+    for (key in object){
+        
+        if (key === "title"){
+            let output = `The book name is "${object[key]}".`;
+            txt += output;
+        } else if (key === "author"){
+            let output = `The book is written by the famous author ${object[key]}.`;
+            txt += output;
+        } else if (key === "year"){
+            let output = `It was written in year ${object[key]}.`;
+            txt += output;
+        } else if (key === "pages"){
+            let output = `It runs ${object[key]} pages.`;
+            txt += output;
+        }
+    }
+    console.log(txt);
+}
+
+summarize(book);

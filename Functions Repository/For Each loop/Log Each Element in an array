@@ -1,0 +1,15 @@
+//Log Each Element
+//Given an array of names, use the forEach method to log each name with its corresponding index.
+
+//log function
+function log_name(array){
+    array.forEach((value, index) => {
+        console.log(`${index} : ${value}`);
+    });
+}
+
+//Input array
+name_arr = ["John", "Ram", "Shyam", "Drishti", "Rajesh", "Raghuvir", "Mahesh"];
+
+//Calling function
+log_name(name_arr);

@@ -1,0 +1,145 @@
+/*Filtering an array:*/
+
+//===========================================================================================================================================
+/*1. Filter Even Numbers
+Write a function that filters all even numbers from an array of integers.*/
+//===========================================================================================================================================
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+function even_num(array){
+    const even_array  = array.filter((number) => number % 2 == 0 );
+    console.log(even_array);
+}
+even_num(numbers);
+
+
+
+//===========================================================================================================================================
+/*2. Filter Odd Numbers
+Write a function that filters all odd numbers from an array of integers.*/
+//===========================================================================================================================================
+const numbers = [11, 22, 33, 44, 55, 66, 77, 88, 99];
+function odd_num(array){
+    const odd_array = array.filter((number) => number % 2 != 0 );
+    console.log(odd_array);
+}
+odd_num(numbers);
+
+
+
+//===========================================================================================================================================
+/*3. Filter Numbers Greater than 10
+Write a function that filters out numbers greater than 10 from an array.*/
+//===========================================================================================================================================
+const numbers = [5, 10, 15, 20, 25, 30];
+function greater_than_10(array){
+    const gtten_array = array.filter((value) => value > 10);
+    console.log(gtten_array);
+}
+greater_than_10(numbers);
+
+
+//===========================================================================================================================================
+/*4. Filter Strings Longer than 3 Characters
+Filter out strings that are longer than 3 characters from an array of strings.*/
+//===========================================================================================================================================
+const words = ['cat', 'dog', 'bird', 'apple', 'pie'];
+function str_filter_3char(array){
+    const str_fltr_array = array.filter((str) => str.length < 4);
+    console.log(str_fltr_array);
+}
+str_filter_3char(words);
+
+
+
+//===========================================================================================================================================
+/*5. Filter Positive Numbers
+Write a function that filters out all positive numbers from an array.*/
+//===========================================================================================================================================
+const numbers = [-1, -5, 3, 9, 0, -2];
+function positive_num(array){
+    const positive_array = array.filter((value) => value > 0 );
+    console.log(positive_array);
+}
+positive_num(numbers);
+
+
+
+//===========================================================================================================================================
+/*6. Filter Objects by a Property Value
+Given an array of objects, filter out the objects where the age is less than 18. */
+//===========================================================================================================================================
+
+const people = [
+    { name: 'John', age: 25 },
+    { name: 'Jane', age: 15 },
+    { name: 'Mark', age: 30 },
+    { name: 'Tom', age: 12 }
+];
+
+function age_filter(array){
+    const age_array = array.filter((value) => value.age > 18);
+    console.log(age_array);
+}
+age_filter(people);
+
+
+
+
+//===========================================================================================================================================
+/* 7. Filter Elements by Type
+Write a function that filters only numbers from an array of mixed types. */
+//===========================================================================================================================================
+const mixedArray = [1, 'apple', 3, true, 5, 'banana'];
+
+function num_filter(array){
+    const num_array = array.filter((value) => typeof(value) == "number" );
+    console.log(num_array);
+}
+num_filter(mixedArray);
+
+
+
+//===========================================================================================================================================
+/* 8. Filter Non-Empty Strings
+Write a function that filters out empty strings from an array. */
+//===========================================================================================================================================
+const strings = ['hello', '', 'world', '!', ''];
+function empty_str_filter(array){
+    const empty_out_array = array.filter((value) => value != "" || value != '');
+    console.log(empty_out_array);
+}
+empty_str_filter(strings);
+
+
+
+//===========================================================================================================================================
+/*9. Filter Numbers Divisible by 5
+Write a function that filters numbers divisible by 5 from an array. */
+//===========================================================================================================================================
+const numbers = [5, 10, 15, 20, 25, 30, 31, 33, 35];
+
+function divisible_by_5(array){
+    const five_array = array.filter((value) => value % 5 == 0);
+    console.log(five_array);
+}
+divisible_by_5(numbers);
+
+
+
+
+//===========================================================================================================================================
+/*10. Filter Based on a Boolean Condition
+Write a function that filters out all falsy values (false, 0, '', null, undefined, NaN) from an array. */
+//===========================================================================================================================================
+const mixedArray = [0, 'hello', false, true, '', undefined, 'JavaScript', null, NaN];
+
+function falsy_filter(array){
+    //If the first operand is truthy, the logical AND operator returns the second operand
+    const falsy_filter_array = array.filter((value) => value && "dog" == "dog" );
+    console.log(falsy_filter_array);
+}
+
+falsy_filter(mixedArray);
+
+
+

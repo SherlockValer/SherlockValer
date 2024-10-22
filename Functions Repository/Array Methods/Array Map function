@@ -1,0 +1,177 @@
+
+//============================================================== The map() method in JavaScript ===========================================================
+
+
+//==========================================================================================================
+/*1. Square Each Number
+Write a function that returns a new array with the squares of each number in an array.*/
+//==========================================================================================================
+
+const numbers = [1, 2, 3, 4, 5, NaN];
+
+function square(array){
+    const square_num = array
+        .filter(num => typeof num == 'number' && !Number.isNaN(num))
+        .map(num => Math.pow(num, 2));
+    return square_num;
+}
+
+const result = square(numbers);
+console.log(result);
+
+
+
+//==========================================================================================================
+/* 2. Double Each Number
+Write a function that doubles each number in an array. */
+//==========================================================================================================
+
+const numbers = [2, 4, 6, 8];
+
+function double(array){
+    return array.map(num => num*2);
+}
+
+const result = double(numbers);
+console.log(result);
+
+//==========================================================================================================
+/*3. Convert to Uppercase
+Write a function that converts each string in an array to uppercase.*/
+//==========================================================================================================
+
+const words = ['hello', 'world', 'javascript'];
+
+function ToCapital(array){
+    return array.map(str => str.toUpperCase());
+}
+
+
+const result = ToCapital(words);
+console.log(result);
+
+
+//==========================================================================================================
+/*4. Extract Property from Objects
+Given an array of objects, write a function that extracts the name property of each object into a new array.*/
+//==========================================================================================================
+
+const people = [
+    { name: 'John', age: 25 },
+    { name: 'Jane', age: 22 },
+    { name: 'Mark', age: 30 }
+];
+
+
+function extract_property(array){
+    return array.map(value => value.name);
+}
+
+
+const result = extract_property(people);
+console.log(result);
+
+
+
+
+//==========================================================================================================
+/*5. Convert Prices from USD to INR
+Write a function that converts an array of prices in USD to INR (Assume $1 = ₹75).*/
+//==========================================================================================================
+
+const pricesInUSD = [10, 20, 30, 40];
+
+function USD_to_INR(array){
+    let USDtoINRRate = 75;
+    return array.map(value => value * USDtoINRRate);
+}
+
+
+const result = USD_to_INR(pricesInUSD);
+console.log(result);
+
+
+
+//==========================================================================================================
+/*6. Length of Each String
+Write a function that returns an array of the lengths of each string in the array.*/
+//==========================================================================================================
+
+const words = ['apple', 'banana', 'cherry'];
+
+function str_length(array){
+    return array.map(value => value.length);
+}
+
+
+const result = str_length(words);
+console.log(result);
+
+
+
+//==========================================================================================================
+/*7. Add 5 to Each Number
+Write a function that adds 5 to each number in an array. */
+//==========================================================================================================
+
+const numbers = [10, 20, 30, 40];
+
+function add5(array){
+    return array.map(num => num+5);
+}
+
+const result = add5(numbers);
+console.log(result);
+
+
+
+//==========================================================================================================
+/*8. Append "!" to Each String
+Write a function that appends an exclamation mark (!) to each string in an array.*/
+//==========================================================================================================
+
+const greetings = ['hi', 'hello', 'hey'];
+
+function append_exclaim(array){
+    return array.map(str => str + "!");
+}
+
+const result = append_exclaim(greetings);
+console.log(result);
+
+
+
+//==========================================================================================================
+/* 9. Multiply Each Number by Its Index
+Write a function that multiplies each number in an array by its index. */
+//==========================================================================================================
+
+const numbers = [1, 2, 3, 4, 5];
+
+function multiply_by_index(array){
+    return array.map((num, index) => num * index);
+}
+
+
+const result = multiply_by_index(numbers);
+console.log(result);
+
+
+
+//==========================================================================================================
+/*10. Convert Boolean to String
+Write a function that converts each boolean value in an array to a string ('true' or 'false').*/
+//==========================================================================================================
+
+const booleans = [true, false, true, false];
+
+function bool_str(array){
+    return array.map(bool => bool.toString());
+}
+
+const result = bool_str(booleans);
+console.log(result);
+
+
+
+

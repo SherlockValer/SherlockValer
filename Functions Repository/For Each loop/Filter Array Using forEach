@@ -10,11 +10,12 @@ function filter_arr(array){
             new_array.push(value);
         }
     })
-    console.log(new_array);
+    return new_array;
 }
 
 //Input array
 const arr = [1,5,"str", 9, NaN, true, false, "ddd", "tree", 6, 7];
 
 //Calling the function
-filter_arr(arr); //Output : [1, 5, 9, 6, 7]
+const result = filter_arr(arr); 
+console.log(result); //Output : [1, 5, 9, 6, 7]

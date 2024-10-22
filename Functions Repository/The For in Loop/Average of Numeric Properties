@@ -9,7 +9,7 @@ function average_score(object){
         counter += 1;
     }
     let avg = Math.floor((sum / counter)*100)/100;
-    console.log(`The average score is ${avg}`);
+    return avg;
 }
 
 const scores = {
@@ -21,4 +21,6 @@ const scores = {
     sanskrit : 99
 };
 
-average_score(scores);
+const result = average_score(scores);
+
+console.log(`The average score is ${result}`);

@@ -1,0 +1,142 @@
+
+
+
+
+//====================================================================================================
+/* 1. Sum of all numbers in an array
+Write a function that takes an array of numbers and returns the sum of all elements. */
+//====================================================================================================
+
+const numbers = [1, 2, 3, 4, 5];
+
+function sum(array){
+    return array.reduce((acc, curr) => acc + curr);
+}
+
+const result = sum(numbers);
+console.log(result);
+
+
+//====================================================================================================
+/*2. Product of all numbers in an array
+Write a function to calculate the product of all numbers in the array using reduce().*/
+//====================================================================================================
+
+const numbers = [1, 2, 3, 4];
+
+function product(array){
+    return array.reduce((acc, curr) => acc*curr);
+}
+
+const result = product(numbers);
+console.log(result);
+
+
+//====================================================================================================
+/*3. Concatenate an array of strings
+Use reduce() to join an array of strings into a single sentence.*/
+//====================================================================================================
+
+const words = ['Hello', 'world', 'this', 'is', 'JavaScript'];
+
+function concat(array){
+    return array.reduce((acc, curr) => acc.concat(" ", curr));
+}
+
+const result = concat(words);
+console.log(result);
+
+
+
+//====================================================================================================
+/*4. Count the number of occurrences of a particular value in an array
+Write a function that takes an array and a specific value, then uses reduce() to count how many times that value appears in the array. */
+//====================================================================================================
+
+const array = [1, 2, 3, 4, 3, 2, 3];
+const valToCount = 3;
+
+function num_count(array, valueToCount){
+    return array.reduce((acc, curr) => {
+        if(curr === valueToCount){
+            acc += 1;
+        };
+        return acc;
+    }, 0);
+}
+
+const result = num_count(array, valToCount);
+console.log(result);
+
+
+
+//====================================================================================================
+/*5. Convert an array of strings into an object with the string lengths as values
+Given an array of strings, create an object where each string is a key and its length is the value. */
+//====================================================================================================
+
+const strings = ['apple', 'banana', 'cherry'];
+
+function stringToobject(array){
+    return array.reduce((acc, curr) =>{
+        acc[curr] = curr.length;
+        return acc;
+    }, {})
+};
+
+const result = stringToobject(strings);
+console.log(result);
+
+
+//====================================================================================================
+/* 6. Flatten a 2D array
+Using reduce(), flatten a 2D array (array of arrays) into a 1D array. */
+//====================================================================================================
+
+const nestedArray = [[1, 2], [3, 4], [5, 6]];
+
+function flatten_array(array){
+    return array.reduce((acc, curr)  => {
+        return acc.concat(curr);
+    }, []);
+}
+
+const result = flatten_array(nestedArray);
+console.log(result);
+
+
+
+//====================================================================================================
+/* 7. Group objects by a property
+Given an array of objects, use reduce() to group them by a specific property. For example, group people by age. */
+//====================================================================================================
+
+const people = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 30 },
+    { name: 'Charlie', age: 25 }
+];
+
+function groupByAge(array){
+    return array.reduce((acc, curr) => {
+        // Get the person's age
+        const age = curr.age;
+
+        // If this age group doesn't exist in the accumulator, create an empty array for it
+        if (!acc[age]){
+            acc[age] = [];
+        }
+
+        // Push the current person into the appropriate age group
+        acc[age].push(curr);
+
+        // Return the updated accumulator
+        return acc;
+    }, {} )
+}
+
+const result = groupByAge(people);
+console.log(result);
+
+
+

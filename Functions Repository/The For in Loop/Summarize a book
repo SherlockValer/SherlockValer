@@ -26,7 +26,8 @@ function summarize(object){
             txt += output;
         }
     }
-    console.log(txt);
+    return txt;
 }
 
-summarize(book);
+const result = summarize(book);
+console.log(result);

@@ -16,8 +16,10 @@ function DeepClone(object){
     for(key in object){
         clone[`${key}`] = object[key];
     }
-    console.log(clone);
+    return clone;
 }
 
 
-DeepClone(obj1);
+const result = DeepClone(obj1);
+
+console.log(result);

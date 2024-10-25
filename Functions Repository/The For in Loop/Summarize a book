@@ -6,7 +6,7 @@ const book = {
     author : "F. Scott Fitzegerald",
     year : 1925,
     pages : 218
-}
+};
 
 function summarize(object){
     let txt = "";

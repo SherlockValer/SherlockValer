@@ -17,7 +17,7 @@ function DeepClone(object){
         clone[`${key}`] = object[key];
     }
     return clone;
-}
+};
 
 
 const result = DeepClone(obj1);

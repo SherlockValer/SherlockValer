@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color generator</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #heading {
+            text-align: center;
+            margin: 50px;
+            padding: 0 50px;
+            background-color: #fff;
+            background-color: #fff;
+            box-shadow: 2px 5px 10px rgba(21, 22, 22, 0.5);
+            border-radius: 5px;
+        }
+
+        p {
+            font-size: large;
+            font-weight: 600;
+        }
+
+        button {
+            padding: 10px;
+            font-size: large;
+            background-color: dodgerblue;
+            color: #fff;
+            border-radius: 5px;
+            border: 1px solid grey;
+            box-shadow: 2px 3px 4px rgb(56, 56, 55);
+        }
+
+        button:hover {
+            transform: translate(2px, 2px);
+        }
+
+        fieldset {
+            margin-top: 100px;
+            background-color: #fff;
+            box-shadow: 2px 5px 10px rgba(21, 22, 22, 0.5);
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+            padding: 0 50px;
+        }
+
+        li {
+            list-style-type: none;
+            margin-right: 40px;
+        }
+
+        #colorCodeInHex {
+            height: 50px;
+            text-align: center;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="heading">
+        <h2>Color Generator</h2>
+        <p>Please click the following button to change Background Color </p>
+    </div>
+    <button id="button">Click Me !</button>
+
+    <fieldset>
+        <p>Move the slider to change Background Color</p>
+        <ul>
+            <li>
+                <label for="">
+                    R:
+                    <input type="range" id="red" min="0" max="255">
+                </label>
+            </li>
+            <li>
+                <label for="">
+                    G:
+                    <input type="range" id="green" min="0" max="255">
+                </label>
+            </li>
+            <li>
+                <label for="">
+                    B:
+                    <input type="range" id="blue" min="0" max="255">
+                </label>
+            </li>
+        </ul>
+
+        <h4>Color Code in Hex :</h4>
+
+        <div id='colorCodeInHex'>
+
+        </div>
+    </fieldset>
+
+
+    <script>
+
+        //Set background color:
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+
+            //Random color generator :
+
+            let R = Math.ceil((Math.random() * 256));
+            let G = Math.ceil((Math.random() * 256));
+            let B = Math.ceil((Math.random() * 256));
+
+            document.body.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+
+            //Hex Code generator
+
+            let hex_R = R.toString(16).padStart(2, '0').toUpperCase();
+            let hex_G = G.toString(16).padStart(2, '0').toUpperCase();
+            let hex_B = B.toString(16).padStart(2, '0').toUpperCase();
+
+            document.getElementById("colorCodeInHex").innerHTML = `#${hex_R}${hex_G}${hex_B}`
+        });
+
+        document.getElementById("red").addEventListener("input", () => {
+
+            //Automatic color changer
+            let R = Number(document.getElementById("red").value);
+            let G = Number(document.getElementById("green").value);
+            let B = Number(document.getElementById("blue").value);
+
+            document.body.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+
+            //Hex Code generator
+
+            let hex_R = R.toString(16).padStart(2, '0').toUpperCase();
+            let hex_G = G.toString(16).padStart(2, '0').toUpperCase();
+            let hex_B = B.toString(16).padStart(2, '0').toUpperCase();
+
+            document.getElementById("colorCodeInHex").innerHTML = `#${hex_R}${hex_G}${hex_B}`
+
+        })
+
+        document.getElementById("green").addEventListener("input", () => {
+
+            //Automatic color changer
+            let R = Number(document.getElementById("red").value);
+            let G = Number(document.getElementById("green").value);
+            let B = Number(document.getElementById("blue").value);
+
+            document.body.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+
+            //Hex Code generator
+
+            let hex_R = R.toString(16).padStart(2, '0').toUpperCase();
+            let hex_G = G.toString(16).padStart(2, '0').toUpperCase();
+            let hex_B = B.toString(16).padStart(2, '0').toUpperCase();
+
+            document.getElementById("colorCodeInHex").innerHTML = `#${hex_R}${hex_G}${hex_B}`
+        })
+
+        document.getElementById("blue").addEventListener("input", () => {
+
+            //Automatic color changer
+            let R = Number(document.getElementById("red").value);
+            let G = Number(document.getElementById("green").value);
+            let B = Number(document.getElementById("blue").value);
+
+            document.body.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+
+            //Hex Code generator
+
+            let hex_R = R.toString(16).padStart(2, '0').toUpperCase();
+            let hex_G = G.toString(16).padStart(2, '0').toUpperCase();
+            let hex_B = B.toString(16).padStart(2, '0').toUpperCase();
+
+            document.getElementById("colorCodeInHex").innerHTML = `#${hex_R}${hex_G}${hex_B}`
+        })
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        .container {
+            height: 60vh;
+            aspect-ratio: 2/3;
+            margin: 100px auto;
+            border: 2px solid grey;
+            box-shadow: 3px 5px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box {
+            border: 2px solid grey;
+        }
+
+        #calculation {
+            height: 30%;
+            margin: 1px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: end;
+            font-size: 4vh;
+            font-weight: 700;
+        }
+
+        #screen, #answer{
+            height: 25%;
+            width: auto;
+            padding: 5px;
+            margin-right: 5px;
+        }
+
+        .buttons {
+            margin: 1px;
+            height: 68%;
+            background-color: antiquewhite;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 3px;
+        }
+
+        button {
+            font-size: 3vh;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="calculation" class="box">
+            <div id="screen">
+
+            </div>
+            <div id="answer">
+
+            </div>
+        </div>
+        <div class="buttons box">
+            
+            
+            <button id="7">7</button>
+            <button id="8">8</button>
+            <button id="9">9</button>
+            <button id="divide">/</button>
+            
+
+            <button id="4">4</button>
+            <button id="5">5</button>
+            <button id="6">6</button>
+            <button id="multiply">*</button>
+            
+ 
+            <button id="1">1</button>
+            <button id="2">2</button>
+            <button id="3">3</button>
+            <button id="plus">+</button>
+
+
+            <button id="AC">AC</button>
+            
+            <button id="0">0</button>
+            <button id="equals">=</button>
+            <button id="minus">-</button>
+
+        </div>
+    </div>
+
+    <script>
+        let str = "";
+        const array = [
+            {
+
+            }
+            ,
+            {
+
+            }
+        ];
+        
+        
+
+        document.getElementById("equals").addEventListener("click", () => {
+            if (array[0].operator === "+") {
+                if (array[1].hasOwnProperty("result")) {
+                    array[1].result = array[1].result + array[0].value2;
+                    console.log(array);
+                } else {
+                    array[1].result = array[0].value1 + array[0].value2;
+                    console.log(array);
+                }
+
+            }
+            else if (array[0].operator === "-") {
+                if (array[1].hasOwnProperty("result")) {
+                    array[1].result = array[1].result - array[0].value2;
+                    console.log(array);
+                } else {
+                    array[1].result = array[0].value1 - array[0].value2;
+                    console.log(array);
+                }
+            } 
+            
+            else if (array[0].operator === "*") {
+                if (array[1].hasOwnProperty("result")) {
+                    array[1].result = array[1].result * array[0].value2;
+                    console.log(array);
+                } else {
+                    array[1].result = array[0].value1 * array[0].value2;
+                    console.log(array);
+                }
+            }
+            
+            else if (array[0].operator === "/") {
+                if (array[1].hasOwnProperty("result")) {
+                    array[1].result = array[1].result / array[0].value2;
+                    console.log(array);
+                } else {
+                    array[1].result = array[0].value1 / array[0].value2;
+                    console.log(array);
+                }
+            }
+
+            document.getElementById("answer").innerHTML = array[1].result;
+            str = array[1].result;
+        })
+
+        //Screen
+
+        //Event Listeners for numbers
+        document.getElementById("1").addEventListener("click", () => {
+            //Screen
+            str += 1;
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            if (!(array[0].hasOwnProperty("value1"))) {
+                array[0].value1 = 1;
+            } else if (array[0].hasOwnProperty("value1")) {
+                array[0].value2 = 1;
+            }
+        })
+
+        document.getElementById("2").addEventListener("click", () => {
+            //Screen
+            str += 2;
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            if (!(array[0].hasOwnProperty("value1"))) {
+                array[0].value1 = 2;
+            } else if (array[0].hasOwnProperty("value1")) {
+                array[0].value2 = 2;
+            }
+        })
+
+        document.getElementById("3").addEventListener("click", () => {
+            //Screen
+            str += 3;
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            if (!(array[0].hasOwnProperty("value1"))) {
+                array[0].value1 = 3;
+            } else if (array[0].hasOwnProperty("value1")) {
+                array[0].value2 = 3;
+            }
+        })
+
+        document.getElementById("4").addEventListener("click", () => {
+            //Screen
+            str += 4;
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            if (!(array[0].hasOwnProperty("value1"))) {
+                array[0].value1 = 4;
+            } else if (array[0].hasOwnProperty("value1")) {
+                array[0].value2 = 4;
+            }
+        })
+
+        document.getElementById("5").addEventListener("click", () => {
+            //Screen
+            str += 5;
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            if (!(array[0].hasOwnProperty("value1"))) {
+                array[0].value1 = 5;
+            } else if (array[0].hasOwnProperty("value1")) {
+                array[0].value2 = 5;
+            }
+        })
+
+        document.getElementById("6").addEventListener("click", () => {
+            //Screen
+            str += 6;
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            if (!(array[0].hasOwnProperty("value1"))) {
+                array[0].value1 = 6;
+            } else if (array[0].hasOwnProperty("value1")) {
+                array[0].value2 = 6;
+            }
+        })
+
+        document.getElementById("7").addEventListener("click", () => {
+            //Screen
+            str += 7;
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            if (!(array[0].hasOwnProperty("value1"))) {
+                array[0].value1 = 7;
+            } else if (array[0].hasOwnProperty("value1")) {
+                array[0].value2 = 7;
+            }
+        })
+
+
+        document.getElementById("8").addEventListener("click", () => {
+            //Screen
+            str += 8;
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            if (!(array[0].hasOwnProperty("value1"))) {
+                array[0].value1 = 8;
+            } else if (array[0].hasOwnProperty("value1")) {
+                array[0].value2 = 8;
+            }
+        })
+
+        document.getElementById("9").addEventListener("click", () => {
+            //Screen
+            str += 9;
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            if (!(array[0].hasOwnProperty("value1"))) {
+                array[0].value1 = 9;
+            } else if (array[0].hasOwnProperty("value1")) {
+                array[0].value2 = 9;
+            }
+        })
+
+
+        //Event listeners for operator
+        document.getElementById("plus").addEventListener("click", () => {
+            //Screen
+            str += "+";
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            array[0].operator = "+";
+        })
+
+        document.getElementById("minus").addEventListener("click", () => {
+            //Screen
+            str += "-";
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            array[0].operator = "-";
+        })
+
+        document.getElementById("multiply").addEventListener("click", () => {
+            //Screen
+            str += "*";
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            array[0].operator = "*";
+        })
+
+        document.getElementById("divide").addEventListener("click", () => {
+            //Screen
+            str += "/";
+            document.getElementById("screen").innerHTML = str;
+
+            //assigning values
+            array[0].operator = "/";
+        })
+
+        //Event listener for All Clear
+        document.getElementById("AC").addEventListener("click", () => {
+            //Screen
+            document.getElementById("screen").innerHTML = 0;
+            document.getElementById("answer").innerHTML = "";
+            str = "";
+
+            //assigning values
+            delete array[0].value1;
+            delete array[0].value2;
+            delete array[0].operator;
+            delete array[1].result;
+        })
+
+    </script>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <style>
+        body {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        section {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #img {
+            width: 50vw;
+            height: 40vh;
+            overflow: hidden;
+            object-fit: contain;
+        }
+
+        .btn {
+            border: 1px solid grey;
+            padding: 5vw 1vw;
+            font-size: 2vh;
+            font-weight: 700;
+            background-color: #2491F0;
+            color: rgb(255, 255, 255);
+            border-radius: 0.5vh;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0d66b4;
+            transform: translate(0.2vh, -0.2vh);
+        }
+
+        #leftBtn {
+            margin-right: 1vw;
+        }
+
+        #rightBtn {
+            margin-left: 1vw;
+        }
+
+
+        .dots {
+            display: flex;
+            width: 10vw;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .dot {
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <button id="leftBtn" class="box btn"><</button>
+        <div class="box"><img id="img" src="1.jfif" alt=""></div>
+        <button id="rightBtn" class="box btn">></button>
+    </section>
+
+    <div class="dots">
+        <div id="0" class="dot">.</div>
+        <div id="1" class="dot">.</div>
+        <div id="2" class="dot">.</div>
+        <div id="3" class="dot">.</div>
+        <div id="4" class="dot">.</div>
+        <div id="5" class="dot">.</div>
+        <div id="6" class="dot">.</div>
+    </div>
+
+    <script>
+        let array = ["1.jfif", "2.jpg", "3.jpg", "5.avif", "6.avif", "7.jpg", "8.webp"];
+        let i = 0;
+
+        const timer = setInterval(() => {
+            const img = document.getElementById("img");
+
+            // Reset the previous dot color to black
+            if (i > 0) {
+                document.getElementById(`${i - 1}`).style.color = "black";
+            } else {
+                document.getElementById(`${array.length - 1}`).style.color = "black";
+            }
+
+            // Update the image source
+            img.src = array[i];
+
+            // Set the current dot's color to grey
+            document.getElementById(`${i}`).style.color = "grey";
+
+            // Move to the next image
+            i = (i + 1) % array.length; // loop back to 0 after the last image
+        }, 2000);
+
+    </script>
+</body>
+
+</html>

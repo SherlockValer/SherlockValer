@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen and (max-width:768px) {
+            main{
+                flex-flow: column;
+            }
+        }
+
+        body {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            margin: 3vw;
+            padding: 0;
+            /* height: 80vh; */
+            text-align: center;
+            background-color: #008080;
+            
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        header{
+            background-color: #f4f4f4;
+            margin-bottom: 2vw;
+            padding: 1vw;
+            border-radius: 0.5vw;
+            line-height: 1.5;
+        }
+
+        main {
+            display: flex;
+            /* grid-template-columns: auto auto auto; */
+            flex-flow: row wrap;
+            justify-content: center;
+            
+        }
+
+        fieldset {
+            display: flex;
+            flex-flow: column wrap;
+            margin: 1vw;
+            background-color: #f4f4f4;
+            border-radius: 1vw;
+            box-shadow: inset;
+        }
+
+        legend{
+            background-color: #B78D1C;
+            color: white;
+            padding: 1vw;
+            border-radius: 0.5vw;
+            font-weight: 600;
+        }
+
+        section {
+            border: 1px solid grey;
+            padding: 1vw;
+            max-width: 40vw;
+            margin: 1vw 0;
+            
+        }
+
+        .box{
+            margin: 0.5vw;
+            background-color: black;
+            color: #f4f4f4;
+            padding: 1vw;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            /* Monospace font */
+            background-color: #f4f4f4;
+            /* Light background */
+            color: #d63384;
+            /* Custom text color */
+            padding: 0.5vw 1vw; 
+            /* Padding around the code */
+            border-radius: 4px;
+            /* Rounded corners */
+            line-height: 1.5;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>toLocaleString() Method</h1>
+        <pre><code>const today = new Date()
+ today.toLocaleString(undefined, {..........})</code></pre>
+
+    </header>
+    <main>
+        <fieldset>
+            <legend>dateStyle</legend>
+            <section>
+                <div id="00" class="box"></div>
+                <pre><code>{dateStyle : "full"}</code></pre>
+            </section>
+            <section>
+                <div id="01" class="box"></div>
+                <code>{dateStyle : "long"}</code>
+            </section>
+            <section>
+                <div id="02" class="box"></div>
+                <code>{dateStyle : "medium"}</code>
+            </section>
+            <section>
+                <div id="03" class="box"></div>
+                <code>{dateStyle : "short"}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>timeStyle</legend>
+            <section>
+                <div id="10" class="box"></div>
+                <code>{timeStyle : "full"}</code>
+            </section>
+            <section>
+                <div id="11" class="box"></div>
+                <code>{timeStyle : "long"}</code>
+            </section>
+            <section>
+                <div id="12" class="box"></div>
+                <code>{timeStyle : "medium"}</code>
+            </section>
+            <section>
+                <div id="13" class="box"></div>
+                <code>{timeStyle : "short"}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>localeMatcher</legend>
+            <section>
+                <div id="20" class="box"></div>
+                <code>{localeMatcher : "best fit"}</code>
+            </section>
+            <section>
+                <div id="21" class="box"></div>
+                <code>{localeMatcher : "lookup"}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>hour12</legend>
+            <section>
+                <div id="40" class="box"></div>
+                <code>{hour12 : true}</code>
+            </section>
+            <section>
+                <div id="41" class="box"></div>
+                <code>{hour12 : false}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>hourCycle</legend>
+            <section>
+                <div id="50" class="box"></div>
+                <code>{hourCycle : "h11"}</code>
+            </section>
+            <section>
+                <div id="51" class="box"></div>
+                <code>{hourCycle : "h12"}</code>
+            </section>
+            <section>
+                <div id="52" class="box"></div>
+                <code>{hourCycle : "h23" }</code>
+            </section>
+            <section>
+                <div id="53" class="box"></div>
+                <code>{hourCycle : "h24"}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>formatMatcher</legend>
+            <section>
+                <div id="60" class="box"></div>
+                <code>{formatMatcher : "basic"}</code>
+            </section>
+            <section>
+                <div id="61" class="box"></div>
+                <code>{formatMatcher : "best fit"}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>weekday</legend>
+            <section>
+                <div id="70" class="box"></div>
+                <code>{weekday : "long"}</code>
+            </section>
+            <section>
+                <div id="71" class="box"></div>
+                <code>{hourCycle : "short"}</code>
+            </section>
+            <section>
+                <div id="72" class="box"></div>
+                <code>{hourCycle : "narrow" }</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>year</legend>
+            <section>
+                <div id="80" class="box"></div>
+                <code>{year : "2-digit"}</code>
+            </section>
+            <section>
+                <div id="81" class="box"></div>
+                <code>{year : "numeric"}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>month</legend>
+            <section>
+                <div id="90" class="box"></div>
+                <code>{month : "2-digit"}</code>
+            </section>
+            <section>
+                <div id="91" class="box"></div>
+                <code>{month : "long"}</code>
+            </section>
+            <section>
+                <div id="92" class="box"></div>
+                <code>{month : "narrow"}</code>
+            </section>
+            <section>
+                <div id="93" class="box"></div>
+                <code>{month : "numeric"}</code>
+            </section>
+            <section>
+                <div id="94" class="box"></div>
+                <code>{month : "short"}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>day</legend>
+            <section>
+                <div id="100" class="box"></div>
+                <code>{day : "2-digit"}</code>
+            </section>
+            <section>
+                <div id="101" class="box"></div>
+                <code>{day : "numeric"}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>hour</legend>
+            <section>
+                <div id="110" class="box"></div>
+                <code>{hour : "2-digit"}</code>
+            </section>
+            <section>
+                <div id="111" class="box"></div>
+                <code>{hour : "numeric"}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>minute</legend>
+            <section>
+                <div id="120" class="box"></div>
+                <code>{minute : "2-digit"}</code>
+            </section>
+            <section>
+                <div id="121" class="box"></div>
+                <code>{minute : "numeric"}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>second</legend>
+            <section>
+                <div id="130" class="box"></div>
+                <code>{second : "2-digit"}</code>
+            </section>
+            <section>
+                <div id="131" class="box"></div>
+                <code>{second : "numeric"}</code>
+            </section>
+        </fieldset>
+        <fieldset>
+            <legend>timeZoneName</legend>
+            <section>
+                <div id="140" class="box"></div>
+                <code>{timeZoneName : "long"}</code>
+            </section>
+            <section>
+                <div id="141" class="box"></div>
+                <code>{timeZoneName : "short"}</code>
+            </section>
+        </fieldset>
+    </main>
+
+    <script>
+        setInterval(() => {
+    //Sets a new date object
+    const today = new Date();
+
+    // Object containing all variations of toLocaleString() method
+    const A = {
+        dateStyle: {
+            div: [0, 1, 2, 3],
+            style: ["full", "long", "medium", "short"]
+        },
+        timeStyle: {
+            div: [0, 1, 2, 3],
+            style: ["full", "long", "medium", "short"]
+        },
+        localeMatcher: {
+            div: [0, 1],
+            style: ["best fit", "lookup"]
+        },
+        hour12: {
+            div: [0, 1],
+            style: [false, true]
+        },
+        hourCycle: {
+            div: [0, 1, 2, 3],
+            style: ["h11", "h12", "h23", "h24"]
+        },
+        formatMatcher: {
+            div: [0, 1],
+            style: ["basic", "best fit"]
+        },
+        weekday: {
+            div: [0, 1, 2],
+            style: ["long", "short", "narrow"]
+        },
+        year: {
+            div: [0, 1],
+            style: ["2-digit", "numeric"]
+        },
+        month: {
+            div: [0, 1, 2, 3, 4],
+            style: ["2-digit", "long", "narrow", "numeric", "short"]
+        },
+        day: {
+            div: [0, 1],
+            style: ["2-digit", "numeric"]
+        },
+        hour: {
+            div: [0, 1],
+            style: ["2-digit", "numeric"]
+        },
+        minute: {
+            div: [0, 1],
+            style: ["2-digit", "numeric"]
+        },
+        second: {
+            div: [0, 1],
+            style: ["2-digit", "numeric"]
+        },
+        timeZoneName: {
+            div: [0, 1],
+            style: ["long", "short"]
+        }
+    };
+
+    // Iterate over the object A
+    for (let key in A) {
+        for (let i = 0; i < A[key].div.length; i++) {
+            let divr = A[key].div[i];
+            let styleKey = key; // Use the key directly as the option name
+            let styleValue = A[key].style[i]; // Get the corresponding style value
+
+            //dynamic object maker
+            let styleOptions = {};
+            styleOptions[styleKey] = styleValue; // Set the dynamic key-value pair
+
+            // Apply additional options that may be needed for toLocaleString
+            let pusher = today.toLocaleString(undefined, styleOptions);
+
+            //Helps to match ids with object keys
+            let j = Number;
+            switch (key) {
+                case "dateStyle":
+                    j = 0;
+                    break;
+                case "timeStyle":
+                    j = 1;
+                    break;
+                case "localeMatcher":
+                    j = 2;
+                    break;
+                case "timeZone":
+                    j = 3;
+                    break;
+                case "hour12":
+                    j = 4;
+                    break;
+                case "hourCycle":
+                    j = 5;
+                    break;
+                case "formatMatcher":
+                    j = 6;
+                    break;
+                case "weekday":
+                    j = 7;
+                    break;
+                case "year":
+                    j = 8;
+                    break;
+                case "month":
+                    j = 9;
+                    break;
+                case "day":
+                    j = 10;
+                    break;
+                case "hour":
+                    j = 11;
+                    break;
+                case "minute":
+                    j = 12;
+                    break;
+                case "second":
+                    j = 13;
+                    break;
+                case "timeZoneName":
+                    j = 14;
+                    break;
+
+            }
+
+            //dom Modifier
+            let dom1 = document.getElementById(`${j}${divr}`);
+            dom1.textContent = pusher; // Set the inner text of the DOM element
+
+        }
+
+    }
+}, 1000)
+    </script>
+</body>
+
+</html>

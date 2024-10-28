@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .container {
+            width: 30vw;
+            height: 50vh;
+            background-color: rgba(166, 172, 172, 0.096);
+            border: 0.5px solid rgba(128, 128, 128, 0.226);
+            box-shadow: 2px 3px 5px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            padding: 2em;
+        }
+
+        head {
+            font-weight: bold;
+        }
+
+        textarea {
+            margin: 5%;
+            background-color: #fff;
+            height: 80%;
+            border: 2px solid rgba(128, 128, 128, 0.226);
+            outline: none;
+            overflow: auto;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        textarea:focus {
+            border-color: rgb(150, 3, 84);
+        }
+
+        #counter,
+        #warning {
+            font-size: 0.8em;
+            text-align: end;
+            margin: 0 5%;
+        }
+
+        #warning {
+            color: #BE1149;
+            height: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <head>Comment Below</head>
+        <textarea name="comment" id="box" maxlength="1000" placeholder="Type your message here..."></textarea>
+        <div id="counter">
+
+        </div>
+        <div id="warning"></div>
+    </div>
+
+    <script>
+        setInterval(() => {
+            const input = document.getElementById('box');
+            let characters = input.value.length;
+            let maxlength = input.getAttribute('maxlength');
+            let Percent = Math.floor((25 * maxlength) / 100);
+
+            const counter = document.getElementById("counter");
+            counter.innerText = `${characters}/${maxlength}`;
+
+            const warning = document.getElementById("warning");
+            if ((maxlength - characters) < Percent) {
+                warning.innerText = "you are close to character limit!"
+            }
+            else {
+                warning.innerText = "";
+            }
+        }, 100)
+    </script>
+</body>
+
+</html>

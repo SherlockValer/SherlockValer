@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3000;
 
 // Replace with your bot token
-const BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN";
+const BOT_TOKEN = "7602961685:AAElOZHbUTZO3h3P_CVPIID9H_jdWB4DYH4";
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${BOT_TOKEN}`;
 
 // Middleware
